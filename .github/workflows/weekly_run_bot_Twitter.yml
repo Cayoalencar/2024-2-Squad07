@@ -43,7 +43,7 @@ jobs:
     - name: Pull latest changes from main
       run: |
         git fetch origin main
-        git merge origin/main
+        git merge origin main
 
     - name: Commit and push anomalias.html
       run: |
