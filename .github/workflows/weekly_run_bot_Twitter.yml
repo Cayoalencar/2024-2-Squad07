@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r Bots/requirements.txt
+        pip install -r requirements.txt  # Verifique o caminho do requirements.txt
 
     - name: Run bot_Twitter.py
       env:  
@@ -39,6 +39,15 @@ jobs:
 
     - name: List files (debug)
       run: ls -R
+
+    - name: Check if anomalias.html exists
+      run: |
+        if [ -f "TestesMapa/anomalias.html" ]; then
+          echo "Arquivo anomalias.html encontrado."
+        else
+          echo "Erro: Arquivo anomalias.html não encontrado."
+          exit 1
+        fi
 
     - name: Commit and push anomalias.html
       run: |
