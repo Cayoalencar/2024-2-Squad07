@@ -3,7 +3,8 @@ name: Weekly Run Bot
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 11 * * 3'
+    - cron: '0 0 * * *'
+
 
 jobs:
   weekly_run:
@@ -25,17 +26,17 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install --upgrade cohere
         pip install -r Bots/requirements.txt
+        pip install --upgrade cohere
 
     - name: Run bot_Twitter.py
-      env:  
-        API_COHERE_KEY: ${{ secrets.API_COHERE_KEY }}
-        API_CONSUMER_KEY_X: ${{ secrets.API_CONSUMER_KEY_X }}
-        API_CONSUMER_SECRET_X: ${{ secrets.API_CONSUMER_SECRET_X }}
-        API_ACCESS_TOKEN_X: ${{ secrets.API_ACCESS_TOKEN_X }}
-        API_ACCESS_TOKEN_SECRET_X: ${{ secrets.API_ACCESS_TOKEN_SECRET_X }}
       run: |
+        env:  
+          API_COHERE_KEY: ${{ secrets.API_COHERE_KEY }}
+          API_CONSUMER_KEY_X: ${{ secrets.API_CONSUMER_KEY_X }}
+          API_CONSUMER_SECRET_X: ${{ secrets.API_CONSUMER_SECRET_X }}
+          API_ACCESS_TOKEN_X: ${{ secrets.API_ACCESS_TOKEN_X }}
+          API_ACCESS_TOKEN_SECRET_X: ${{ secrets.API_ACCESS_TOKEN_SECRET_X }}
         cd Bots
         python bot_Twitter.py
 
