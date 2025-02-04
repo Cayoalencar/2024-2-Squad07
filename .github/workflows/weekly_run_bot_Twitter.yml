@@ -46,13 +46,9 @@ jobs:
         API_ACCESS_TOKEN_SECRET_X: ${{ secrets.API_ACCESS_TOKEN_SECRET_X }}
       run: |
         cd Bots
-        python bot_Twitter.py
+        python3 bot_Twitter.py
 
-    - name: List files (debug)
-      run: ls -R
-      
     - name: Commit and push anomalias.html
-      if: steps.check_changes.outputs.changes_detected == 'true'
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "GitHub Actions Bot"
