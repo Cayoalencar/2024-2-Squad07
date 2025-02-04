@@ -33,14 +33,6 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Debug environment variables
-      run: |
-        echo "API_COHERE_KEY: $API_COHERE_KEY"
-        echo "API_CONSUMER_KEY_X: $API_CONSUMER_KEY_X"
-        echo "API_CONSUMER_SECRET_X: $API_CONSUMER_SECRET_X"
-        echo "API_ACCESS_TOKEN_X: $API_ACCESS_TOKEN_X"
-        echo "API_ACCESS_TOKEN_SECRET_X: $API_ACCESS_TOKEN_SECRET_X"
-
     - name: Run bot_Twitter.py
       env:  
         API_COHERE_KEY: ${{ secrets.API_COHERE_KEY }}
