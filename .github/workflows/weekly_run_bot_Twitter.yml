@@ -37,16 +37,13 @@ jobs:
         cd Bots
         python bot_Twitter.py
 
-    - name: List files (debug)
-      run: ls -R
-
-    - name: Commit and push anomalias.html
-      if: steps.check_changes.outputs.changes_detected == 'true'
-      run: |
-        # Configura o usuário e e-mail do Git
-        git config user.name "GitHub Actions Bot"
-        git config user.email "actions@github.com"
-        git pull origin main
-        git add TestesMapa/anomalias.html
-        git commit -m "Adicionando arquivo anomalias.html gerado automaticamente"
-        git push origin main
+    # - name: Commit and push anomalias.html
+    #   if: steps.check_changes.outputs.changes_detected == 'true'
+    #   run: |
+    #     # Configura o usuário e e-mail do Git
+    #     git config user.name "GitHub Actions Bot"
+    #     git config user.email "actions@github.com"
+    #     git pull origin main
+    #     git add TestesMapa/anomalias.html
+    #     git commit -m "Adicionando arquivo anomalias.html gerado automaticamente"
+    #     git push origin main
