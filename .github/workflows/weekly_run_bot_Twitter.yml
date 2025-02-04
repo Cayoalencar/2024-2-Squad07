@@ -53,6 +53,6 @@ jobs:
         git config --global user.name "Github Actions"
         git config --global user.email "actions@users.noreply.github.com"
         git pull origin main --rebase --autostash
-        git add --all
+        git add TestesMapa/anomalias.html
         git commit -m "ci: Adicionando arquivo anomalias.html gerado automaticamente"
         git push origin main --force
