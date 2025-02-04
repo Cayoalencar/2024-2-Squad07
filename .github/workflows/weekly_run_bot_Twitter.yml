@@ -49,7 +49,8 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "GitHub Actions Bot"
-        git pull origin main
+        git pull origin main --rebase --autostash
         git add TestesMapa/anomalias.html
-        git commit --allow-empty -m "ci: Adicionando arquivo anomalias.html gerado automaticamente"
+        git commit --amend --no-edit --date "$(date)" -m "ci: Adicionando arquivo anomalias.html gerado automaticamente"
         git push origin main --force
+
