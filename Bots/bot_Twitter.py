@@ -261,8 +261,8 @@ def html_generate(obra):
     print(f"Arquivo HTML gerado em: {file_path}")
 
 def main():
-    json_file_path = r"./TestesMapa/obrasgov/obras_com_lat_long.json"
-    output_dir = r"./Bots/imagens"
+    json_file_path = "TestesMapa/obrasgov/obras_com_lat_long.json"
+    output_dir = "Bots/imagens"
 
     data = load_json(json_file_path)
 
