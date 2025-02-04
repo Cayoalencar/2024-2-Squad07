@@ -45,7 +45,6 @@ jobs:
         API_ACCESS_TOKEN_X: ${{ secrets.API_ACCESS_TOKEN_X }}
         API_ACCESS_TOKEN_SECRET_X: ${{ secrets.API_ACCESS_TOKEN_SECRET_X }}
       run: |
-        cd ..
         python3 Bots/bot_Twitter.py
 
     - name: Commit and push anomalias.html
