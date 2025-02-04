@@ -3,7 +3,7 @@ name: Weekly Run Bot
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '10 3 * * *'
 
 
 jobs:
@@ -52,7 +52,7 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "GitHub Actions Bot"
-        git pul origin main
+        git pull origin main
         git add TestesMapa/anomalias.html
         git commit -m "ci: Adicionando arquivo anomalias.html gerado automaticamente"
         git push origin main
