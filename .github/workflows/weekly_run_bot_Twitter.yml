@@ -30,13 +30,13 @@ jobs:
         pip install --upgrade cohere
 
     - name: Run bot_Twitter.py
+      env:  
+        API_COHERE_KEY: ${{ secrets.API_COHERE_KEY }}
+        API_CONSUMER_KEY_X: ${{ secrets.API_CONSUMER_KEY_X }}
+        API_CONSUMER_SECRET_X: ${{ secrets.API_CONSUMER_SECRET_X }}
+        API_ACCESS_TOKEN_X: ${{ secrets.API_ACCESS_TOKEN_X }}
+        API_ACCESS_TOKEN_SECRET_X: ${{ secrets.API_ACCESS_TOKEN_SECRET_X }}
       run: |
-        env:  
-          API_COHERE_KEY: ${{ secrets.API_COHERE_KEY }}
-          API_CONSUMER_KEY_X: ${{ secrets.API_CONSUMER_KEY_X }}
-          API_CONSUMER_SECRET_X: ${{ secrets.API_CONSUMER_SECRET_X }}
-          API_ACCESS_TOKEN_X: ${{ secrets.API_ACCESS_TOKEN_X }}
-          API_ACCESS_TOKEN_SECRET_X: ${{ secrets.API_ACCESS_TOKEN_SECRET_X }}
         cd Bots
         python bot_Twitter.py
 
