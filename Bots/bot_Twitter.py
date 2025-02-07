@@ -271,7 +271,7 @@ def main():
             obra for obra in data
             if obra['dataFinalPrevista'] and obra['dataFinalPrevista'] < "2024-01-01" and obra['dataFinalEfetiva'] is None
         ]
-        save_image(obras_atrasadas, output_dir)
+        save_image(obras_atrasadas, output_path)
         html_generate(obras_atrasadas)
         run_bot(output_dir)
 
