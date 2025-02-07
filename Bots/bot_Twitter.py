@@ -80,7 +80,7 @@ def save_image(data, output_dir):
 
         try:
             font_path = "arial.ttf"  
-            font = ImageFont.truetype(font_path, size=20)  
+            font = ImageFont.truetype(font_path, size=40)  
         except Exception as e:
             print(f"Erro ao carregar a fonte: {e}. Usando fonte padrão.")
             font = ImageFont.load_default()  
