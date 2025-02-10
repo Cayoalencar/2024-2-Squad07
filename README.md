@@ -1,4 +1,4 @@
-# 2024-2-Squad07
+# Mapeamento de Obras - DF
 
 Este repositório será utilizado pelo Grupo 7 para o desenvolvimento de um projeto da disciplina de *Métodos de Desenvolvimento de Software*. O projeto se trata da construção de um software de Mapeamento de Obras e Serviços Públicos.
 
